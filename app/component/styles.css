@@ -1,0 +1,61 @@
+/* Gaya dasar untuk halaman */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  /* overflow: hidden; */
+}
+
+/* Gaya utama untuk kontainer aplikasi */
+.app {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+/* Kontainer untuk hujan */
+.rain-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Gaya untuk tetesan hujan */
+.raindrop {
+  position: absolute;
+  width: 1px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  animation: fall linear infinite;
+}
+
+/* Animasi tetesan hujan yang jatuh */
+@keyframes fall {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh); /* Tetesan jatuh ke bawah layar */
+  }
+}
+
+/* Efek spotlight atau cahaya senter */
+.spotlight {
+  position: absolute;
+  width: 300px; /* Ukuran cahaya senter */
+  height: 300px; /* Ukuran cahaya senter */
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6); /* Warna cahaya senter */
+  pointer-events: none; /* Agar spotlight tidak mengganggu interaksi lainnya */
+  filter: blur(50px); /* Efek blur agar cahaya lebih lembut */
+  transition: left 0.1s, top 0.1s; /* Animasi halus saat bergerak mengikuti kursor */
+}
