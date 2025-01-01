@@ -1,10 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+const tailwindcss = {
+  darkMode: "class",
+  content: ["./components/**/*.{js,ts,jsx,tsx,mdx}", "./app/**/*.{js,ts,jsx,tsx,mdx}", "./public/index.html"],
   theme: {
     extend: {
       colors: {
@@ -15,3 +12,5 @@ export default {
   },
   plugins: [],
 };
+
+export default tailwindcss;

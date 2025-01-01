@@ -14,17 +14,13 @@ function Petir() {
         animationDelay: `${Math.random() * 2}s`, // Penundaan acak untuk variasi
       };
       setRaindrops((prev) => [...prev, newRaindrop]);
-
-      //   // Batasi jumlah tetesan agar tidak terlalu banyak
       if (raindrops.length > 500) {
         setRaindrops([]);
       }
     };
-
-    // Generate tetesan hujan secara terus-menerus
     const interval = setInterval(generateRaindrops, 1000);
 
-    return () => clearInterval(interval); // Hentikan interval saat komponen di-unmount
+    return () => clearInterval(interval);
   }, [raindrops]);
 
   const [cursorPosition, setCursorPosition] = useState({ x: -500, y: -500 });
@@ -42,8 +38,7 @@ function Petir() {
   }, []);
 
   return (
-    // <div className="app">
-    <div className="flex align-center justify-center text-center bg-white relative">
+    <div className="top-2/5">
       <div
         className="spotlight"
         style={{
@@ -51,19 +46,20 @@ function Petir() {
           top: cursorPosition.y - 150, // Mengatur posisi vertikal cahaya senter
         }}
       />
-      {/* <h1>Efek Hujan</h1> */}
-      <div className="rain-container">
-        {raindrops.map((drop, index) => (
-          <div
-            key={index}
-            className="raindrop"
-            style={{
-              left: drop.left,
-              animationDuration: drop.animationDuration,
-              animationDelay: drop.animationDelay,
-            }}
-          />
-        ))}
+      <div className="relative">
+        <div className="rain-container">
+          {raindrops.map((drop, index) => (
+            <div
+              key={index}
+              className="raindrop"
+              style={{
+                left: drop.left,
+                animationDuration: drop.animationDuration,
+                animationDelay: drop.animationDelay,
+              }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
