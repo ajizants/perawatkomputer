@@ -28,7 +28,11 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-gray-900`}>
         <Jumbotron />
         <NavBar />
-        <div className="min-h-screen container mx-auto bg-white dark:bg-gray-900">{children}</div>
+        <div
+          className="w-full min-w-xl flex flex-wrap
+        items-center justify-center mx-auto bg-white dark:bg-gray-900">
+          {children}
+        </div>
         <Fotter />
       </body>
     </html>

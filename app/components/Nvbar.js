@@ -73,20 +73,23 @@ const NavBar = () => {
 
           {/* Navbar Links */}
           <div className={`items-center justify-between ${isDropdownOpen ? "flex" : "hidden"} bg-gray-400 border-gray-200 dark:bg-gray-900 w-full xl:flex xl:w-auto xl:order-1`} id="navbar-language">
-            <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li>
+            <ul
+              className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg 
+              bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800
+              md:dark:bg-gray-900 dark:border-gray-700">
+              <li className="bg-gray-400 dark:bg-gray-900 px-4">
                 <NaviLink to="#">Home</NaviLink>
               </li>
-              <li>
+              <li className="bg-gray-400 dark:bg-gray-900 px-4">
                 <NaviLink to="#about">About</NaviLink>
               </li>
-              <li>
+              <li className="bg-gray-400 dark:bg-gray-900 px-4">
                 <NaviLink to="#skills">Skills</NaviLink>
               </li>
-              <li>
+              <li className="bg-gray-400 dark:bg-gray-900 px-4">
                 <NaviLink to="#projects">Projects</NaviLink>
               </li>
-              <li>
+              <li className="bg-gray-400 dark:bg-gray-900 px-4">
                 <NaviLink to="#contact">Contact</NaviLink>
               </li>
             </ul>
